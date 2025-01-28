@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showModal" class="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
+  <div v-if="showModal" class="fixed inset-0 bg-black/30 flex justify-center items-center z-50">
     <div class="bg-white p-6 rounded-lg  w-[60%] mx-auto md:w-96">
       <img src="/images/icon-order-confirmed.svg" alt="Order confirmed" class="my-4" />
       <h3 class="text-xl font-bold text-gray-900 mb-1">Order Confirmed</h3>
