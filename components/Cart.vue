@@ -50,7 +50,7 @@
     </div>
   </div>
 
-
+  <!-- Modal Component -->
   <CartModal
     :showModal="showModal"
     :cart="cart"

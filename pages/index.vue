@@ -14,7 +14,7 @@
       </div>
   
       <div class="w-full md:w-[30%] ml-0 md:ml-6">
-        <Cart :initialCart="cart" @remove-item="removeFromCart" /> 
+        <Cart :initialCart="cart" @remove-item="removeFromCart" @clear-cart="clearCart" />
       </div>
     </div>
   </div>
@@ -26,19 +26,17 @@ import type { Dessert, CartItem } from "../utils/types";
 import DessertCard from "../components/DesertCard.vue";
 import Cart from "../components/Cart.vue"; 
 
-
 const desserts = ref<Dessert[]>([
   { id: 1, name: "Waffle with Berries", desc: "Waffle with Berries", price: 11, image: "/images/image-cake-desktop.jpg" },
   { id: 2, name: "Vanilla Bean Crème Brûlée", desc: "Waffle with berries", price: 12, image: "/images/image-baklava-mobile.jpg" },
   { id: 3, name: "Macaron Mix of Five", desc: "Waffle with Berries", price: 10, image: "/images/image-macaron-desktop.jpg" },
-  { id: 4, name: "Macaron Mix of Five", desc: "Waffle with Berries", price: 9, image: "/images/image-brownie-desktop.jpg" },	
+  { id: 4, name: "Macaron Mix of Five", desc: "Waffle with Berries", price: 9, image: "/images/image-brownie-desktop.jpg" },  
   { id: 5, name: "Macaron Mix of Five", desc: "Waffle with Berries", price: 8, image: "/images/image-panna-cotta-mobile.jpg" },
   { id: 6, name: "Waffle", desc: "Waffle with Berries", price: 4, image: "/images/image-meringue-tablet.jpg" },
   { id: 7, name: "Waffle", desc: "Waffle with Berries", price: 14, image: "/images/image-tiramisu-tablet.jpg" },
   { id: 8, name: "Waffle", desc: "Waffle with Berries", price: 3, image: "/images/image-creme-brulee-thumbnail.jpg" },
-  { id: 8, name: "Waffle", desc: "Waffle with Berries", price: 17, image: "/images/image-tiramisu-desktop.jpg" },
+  { id: 9, name: "Waffle", desc: "Waffle with Berries", price: 17, image: "/images/image-tiramisu-desktop.jpg" },
 ]);
-
 
 const cart = ref<CartItem[]>([]);
 
@@ -57,7 +55,12 @@ const addToCart = (item: Dessert) => {
 const removeFromCart = (item: CartItem) => {
   const itemIndex = cart.value.findIndex(cartItem => cartItem.id === item.id);
   if (itemIndex !== -1) {
-    cart.value.splice(itemIndex, 1); 
+    cart.value.splice(itemIndex, 1);
   }
+};
+
+
+const clearCart = () => {
+  cart.value = [];
 };
 </script>
