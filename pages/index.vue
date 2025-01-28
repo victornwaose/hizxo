@@ -1,7 +1,6 @@
 <template>
   <div class="w-[90%] mx-auto p-4 min-h-screen">
     <div class="flex flex-col md:flex-row">
-      <!-- Desserts Section -->
       <div class="w-full md:w-[70%]">
         <h1 class="text-3xl font-bold mb-7">Desserts</h1>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -19,7 +18,6 @@
         </div>
       </div>
 
-      <!-- Cart Section -->
       <div class="w-full md:w-[30%] ml-0 md:ml-6">
         <Cart
           :cart="cart"
@@ -41,7 +39,6 @@ import DessertCard from "../components/DesertCard.vue";
 import Cart from "../components/Cart.vue";
 import type { Dessert, CartItem } from "../utils/types";
 
-// Dessert list
 const desserts = ref<Dessert[]>([
   { id: 1, name: "Waffle with Berries", desc: "Sweet and fruity waffle", price: 11, image: "/images/image-cake-desktop.jpg" },
   { id: 2, name: "Vanilla Bean Crème Brûlée", desc: "Classic dessert", price: 12, image: "/images/image-baklava-mobile.jpg" },
@@ -54,13 +51,12 @@ const desserts = ref<Dessert[]>([
   { id: 9, name: "Tiramisu Deluxe", desc: "Extra indulgent", price: 17, image: "/images/image-tiramisu-desktop.jpg" },
 ]);
 
-// Cart state
+
 const cart = ref<CartItem[]>([]);
 
-// Modal visibility
 const showModal = ref(false);
 
-// Add item to cart
+
 const handleAddToCart = (dessert: Dessert) => {
   const existingItem = cart.value.find((cartItem) => cartItem.id === dessert.id);
   if (existingItem) {
@@ -70,12 +66,12 @@ const handleAddToCart = (dessert: Dessert) => {
   }
 };
 
-// Remove item from cart
+
 const handleRemoveFromCart = (dessert: Dessert) => {
   cart.value = cart.value.filter((cartItem) => cartItem.id !== dessert.id);
 };
 
-// Increase quantity
+
 const handleIncreaseQuantity = (dessert: Dessert) => {
   const cartItem = cart.value.find((cartItem) => cartItem.id === dessert.id);
   if (cartItem) {
@@ -83,7 +79,7 @@ const handleIncreaseQuantity = (dessert: Dessert) => {
   }
 };
 
-// Decrease quantity
+
 const handleDecreaseQuantity = (dessert: Dessert) => {
   const cartItem = cart.value.find((cartItem) => cartItem.id === dessert.id);
   if (cartItem) {
@@ -95,28 +91,27 @@ const handleDecreaseQuantity = (dessert: Dessert) => {
   }
 };
 
-// Clear the cart
+
 const clearCart = () => {
   cart.value = [];
 };
 
-// Check if a dessert is in the cart
+
 const isInCart = (dessert: Dessert) => {
   return cart.value.some((cartItem) => cartItem.id === dessert.id);
 };
 
-// Get quantity of a dessert in the cart
 const getQuantity = (dessert: Dessert) => {
   const cartItem = cart.value.find((cartItem) => cartItem.id === dessert.id);
   return cartItem ? cartItem.quantity : 0;
 };
 
-// Calculate total price
+
 const totalPrice = computed(() => {
   return cart.value.reduce((total, item) => total + item.price * item.quantity, 0);
 });
 
-// Modal handlers
+
 const openModal = () => {
   showModal.value = true;
 };

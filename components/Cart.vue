@@ -12,7 +12,6 @@
       <p class="text-gray-500">Your added items will appear here</p>
     </div>
 
-    <!-- Cart Items -->
     <div v-else>
       <ul>
         <li
@@ -39,13 +38,11 @@
         </li>
       </ul>
 
-      <!-- Total Price -->
       <div class="mt-4 flex justify-between items-center">
         <span class="font-medium text-gray-600 text-sm">Order Total:</span>
         <span class="font-bold text-lg">${{ totalPrice.toFixed(2) }}</span>
       </div>
 
-      <!-- Carbon Neutral Message -->
       <div class="flex gap-3 p-4 bg-orange-50 mt-4">
         <img src="/images/icon-carbon-neutral.svg" alt="carbon neutral" />
         <p class="text-sm">
@@ -53,7 +50,7 @@
         </p>
       </div>
 
-      <!-- Confirm Order Button -->
+
       <button
         @click="openModal"
         class="bg-orange-600 px-6 rounded-3xl w-full mt-5 py-2 text-white"
@@ -63,7 +60,7 @@
     </div>
   </div>
 
-  <!-- Modal Component -->
+
   <CartModal
     :showModal="showModal"
     :cart="cart"
@@ -74,26 +71,26 @@
 
 <script setup lang="ts">
 import { defineProps, defineEmits, PropType } from "vue";
-import type { CartItem } from "../utils/types"; // Import type for cart items
-import CartModal from "./CartModal.vue"; // Import modal component
+import type { CartItem } from "../utils/types"; 
+import CartModal from "./CartModal.vue"; 
 
-// Props accepted from the parent
+
 const props = defineProps({
   cart: {
-    type: Array as PropType<CartItem[]>, // Array of CartItem objects
+    type: Array as PropType<CartItem[]>, 
     required: true,
   },
   totalPrice: {
-    type: Number, // Total price passed from parent
+    type: Number, 
     required: true,
   },
   showModal: {
-    type: Boolean, // Modal visibility state
+    type: Boolean, 
     required: true,
   },
 });
 
-// Emit events to the parent
+
 const emit = defineEmits([
   "remove-item",
   "clear-cart",
@@ -101,22 +98,21 @@ const emit = defineEmits([
   "close-modal",
 ]);
 
-// Remove item from cart
+
 const handleRemoveItem = (item: CartItem) => {
   emit("remove-item", item);
 };
 
-// Clear the cart
 const handleClearCart = () => {
   emit("clear-cart");
 };
 
-// Open the modal
+
 const openModal = () => {
   emit("open-modal");
 };
 
-// Close the modal
+
 const closeModal = () => {
   emit("close-modal");
 };
