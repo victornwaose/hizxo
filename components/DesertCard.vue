@@ -74,7 +74,7 @@ const decreaseQuantity = () => {
     quantity.value--;
     emit('add-to-cart', props.dessert, quantity.value);
   } else {
-    // If the quantity is 1 or less, remove from cart
+    
     inCart.value = false;
     emit('remove-from-cart', props.dessert);
   }
