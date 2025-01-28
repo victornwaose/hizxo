@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/nkezesylvester/.nvm/versions/node/v22.12.0/bin/node /Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/bin/yarn.js install
+
+PATH: 
+  /private/var/folders/6d/z_7q6w193cd6ygn7v4n92jd40000gn/T/xfs-d1e7e66e:/Users/nkezesylvester/.nvm/versions/node/v22.12.0/bin:/Users/nkezesylvester/Library/Application Support/Herd/bin/:/Users/nkezesylvester/bin:/Users/nkezesylvester/.config/phpmon/bin:/opt/homebrew/opt/php@8.1/bin:/Users/nkezesylvester/.nvm/versions/node/v18.16.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/nkezesylvester/Library/Application Support/Herd/bin/:/Users/nkezesylvester/bin:/Users/nkezesylvester/.config/phpmon/bin:/opt/homebrew/opt/php@8.1/bin:/Users/nkezesylvester/.nvm/versions/node/v18.16.0/bin:/Users/nkezesylvester/flutter/flutter/bin/:/Users/nkezesylvester/.composer/vendor/bin/:/Users/nkezesylvester/flutter/flutter/bin/:/Users/nkezesylvester/.composer/vendor/bin/:/Users/nkezesylvester/Documents/Codes/node_modules/.bin:/Users/nkezesylvester/Documents/node_modules/.bin:/Users/nkezesylvester/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  22.12.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: /Users/nkezesylvester/Documents/Codes/boiler-plate/node_modules/esbuild: Cannot find module 'pnpapi'
+  Require stack:
+  - /Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js
+  Require stack:
+  - /Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js
+      at Function.<anonymous> (node:internal/modules/cjs/loader:1249:15)
+      at require$$0.Module._resolveFilename (/private/var/folders/6d/z_7q6w193cd6ygn7v4n92jd40000gn/T/xfs-8590b0a1/dlx-73921/.pnp.cjs:8899:54)
+      at Function.resolve (node:internal/modules/esm/translators:151:30)
+      at /Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:34243:76
+      at Generator.next (<anonymous>)
+      at step (/Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:310:30)
+      at /Users/nkezesylvester/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+      "nuxt": "^3.15.3",
+      "vue": "latest",
+      "vue-router": "latest"
+    },
+    "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
