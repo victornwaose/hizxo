@@ -23,7 +23,7 @@
             <div class="flex gap-4 text-sm mt-2">
               <span class="text-orange-600 font-bold">{{ item.quantity }}X</span>
               <span class="text-gray-500 font-medium">@ ${{ item.price }}</span>
-              <span class="text-gray-600 font-bold">${{ (item.price * item.quantity) }}</span> <!-- Subtotal per item -->
+              <span class="text-gray-600 font-bold">${{ (item.price * item.quantity) }}</span> 
             </div>
           </div>
           

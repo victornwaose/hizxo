@@ -45,9 +45,8 @@ const totalPrice = computed(() => {
   return props.cart.reduce((total, item) => total + item.price * item.quantity, 0);
 });
 
-// New method to clear cart and close modal
 const clearAndClose = () => {
-  emit('clear-cart'); // Emit the event to clear the cart
-  emit('close-modal'); // Emit the event to close the modal
+  emit('clear-cart'); 
+  emit('close-modal');
 };
 </script>
